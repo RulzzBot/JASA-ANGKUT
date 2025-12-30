@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JasaAngkut Kudus</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="style/style.css" />
+
 </head>
-<body>
-    
+<body class="text-gray-800 bg-gray-100">
+    <!-- ================= HERO ================= -->
+    <section class="relative h-screen" id="Home">
+        <img
+        src="img/Armada1.png"
+        class="absolute inset-0 object-cover w-full h-full"/>
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <!-- Header -->
+        <header class="relative z-10 flex items-center justify-between px-6 py-6 mx-auto text-white max-w-7xl">
+            <h1 class="text-xl font-bold">JasaAngkut <span class="text-red-500">.</span></h1>
+            <nav class="hidden gap-6 px-4 py-2 text-sm bg-gray-400 bg-opacity-50 rounded-full md:flex">
+                <a href="#Home">Home</a>
+                <a href="#Services">Services</a>
+                <a href="#Keunggulan">Keunggulan</a>
+                <a href="#Testimoni">Testimoni</a>
+            </nav>
+            <a href="#" class="px-5 py-2 text-sm font-semibold bg-orange-500 rounded-lg shadow-lg shadow-orange-500/50 hover:bg-orange-600 hover:shadow-orange-600/50">Get Started →</a>
+        </header>
+
+        <div class="relative z-10 flex items-center px-6 h-[75%] mx-auto max-w-7xl">
+            <div class="max-w-xl text-white">
+                <h2 class="text-4xl font-bold leading-tight md:text-5xl ">Jasa Angkut Barang & <br> Sewa Mobil Kudus</h2>
+                <p class="mt-4 text-sm text-gray-200 md:text-base">
+                    Kami Menyediakan Jasa Angkut Kudus, kami siap melayani 
+                    jasa Angkut Barang, jasa angkut Pindahan Rumah dan Jasa Angkut Lainnya
+                </p>
+                <a href="" class="inline-block py-2 mt-6 font-semibold bg-orange-500 rounded-lg shadow-sm px-7 ">Pesan Via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section class="px-6 py-16 mx-auto max-w-7xl" id="Services">
+        <p class="text-sm tracking-wider text-gray-500">- Services</p>
+        <h2 class="mt-2 text-3xl font-bold">Kami Melayani Berbagai Kebutuhan Angkut Anda</h2>
+        <p class="mt-2 text-sm text-gray-700">Aman, cepat, dan terpercaya untuk wilayah Kudus & sekitarnya</p>
+        <div class="grid grid-cols-1 gap-6 mt-10 md:grid-cols-4" id="services">
+            <!-- CARD -->
+        </div>
+    </section>
+    <script src="script/global.js"></script>
 </body>
 </html>
