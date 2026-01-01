@@ -3,7 +3,7 @@ const services = [
         title : "Pick Up L300",
         desc  : "Angkut Barang Besar aman & Rapi dengan pagar kanan kiri",
         feature : ["Muat Banyak", "Aman"],
-        // gambar : 
+        gambar : "img/Armada1_Compress.png" 
     },
     {
         title : "Jasa Pindahan",
@@ -29,6 +29,7 @@ services.forEach(item => {
     <div class="p-6 bg-white shadow-md rounded-xl">
         <div class="h-32 mb-4 bg-gray-200 rounded">
         <!--gambar disini-->
+        <img src="${item.gambar}" alt="${item.title}" class="object-cover w-full h-full rounded float"/>
         </div>
         <h3 class="font-semibold">${item.title}</h3>
         <p class="text-sm text-gray-600 mt-2">${item.desc}</p>
@@ -76,3 +77,13 @@ keunggulan.forEach(unggul => {
         </div>
     </div>`
 })
+
+
+const slider = document.getElementById("slider");
+
+let index = 0;
+
+setInterval(() => {
+    index = (index + 1) % 3;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+},4000);

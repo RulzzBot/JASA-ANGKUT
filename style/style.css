@@ -4,3 +4,11 @@
 body {
   font-family: "Inter", sans-serif;
 }
+
+.float{
+  transition: transform 0.3s ease;
+}
+
+.float:hover {
+  transform: scale(1.05)
+}
