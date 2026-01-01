@@ -1,3 +1,5 @@
+// SERVICES JS
+
 const services = [
     {
         title : "Pick Up L300",
@@ -42,6 +44,8 @@ services.forEach(item => {
     `
 })
 
+// KEUNGGULAN JS
+
 const keunggulan  = [
     {
         title: "Armada Aman & Dimodifikasi",
@@ -78,12 +82,106 @@ keunggulan.forEach(unggul => {
     </div>`
 })
 
+// TESTIMONI JS
+
+const testi = [
+    {
+        nama : "Yusdi Rohman",
+        kota : "Demak",
+        rating : "⭐⭐⭐⭐⭐",
+        isi : "Pelayanan nya Oke Banget, Cepat dan juga Barang bawaan aman. Saya akan langganan disini.",
+        desc : "Klien Pindahan Barang"
+    },
+    {
+        nama : "Nana Rosiana",
+        kota : "Demak",
+        rating : "⭐⭐⭐⭐⭐",
+        isi : "Driver dan kernet nya ramah-ramah dan juga asik,kerja nya juga profesional",
+        desc : "Klien Angkut Barang"
+    },
+    {
+        nama : "Nazrul Wijaya",
+        kota : "Kudus",
+        rating : "⭐⭐⭐⭐⭐",
+        isi : "Pelayanan nya Oke Banget, Cepat dan juga Barang bawaan aman",
+        desc : "Klien Jasa Pindahan"
+    },
+    {
+        nama : "Siti Aminah",
+        kota : "Jepara",
+        rating : "⭐⭐⭐⭐⭐",
+        isi : "Harga nya terjangkau, driver nya ramah dan tepat waktu",
+        desc : "Klien Angkut Barang"
+    }
+]
+
+const ContainerTesti = document.querySelector(".testi");
+
+testi.forEach(t => {
+    ContainerTesti.innerHTML += `
+    <div class="min-w-full px-4">
+        <div class="p-6 bg-white border rounded-xl shadow-xl">
+            ${t.rating}
+            <p class="mt-4 text-sm text-gray-700">${t.isi}</p>
+            <div class="flex items-center mt-6 gap-4">
+                <i class="text-4xl fa-solid fa-user-tie"></i>
+                <div class="">
+                    <p class="text-sm font-semibold">${t.nama}</p>
+                    <p class="text-sm text-gray-600">${t.desc} -${t.kota}</p>
+                </div>
+            </div>
+        </div>
+    </div>`
+})
+
+// SLIDER JS
 
 const slider = document.getElementById("slider");
 
 let index = 0;
 
-setInterval(() => {
-    index = (index + 1) % 3;
+const totalSlide = testi.length;
+
+let autoSlide = setInterval(nextSlide, 3000);
+
+function nextSlide() {
+    index = (index + 1) % totalSlide;
+    updateSlide();
+}
+
+function prevSlide() {
+    index = (index -1 + totalSlide) % totalSlide;
+    updateSlide();
+}
+
+function updateSlide() {
     slider.style.transform = `translateX(-${index * 100}%)`;
-},4000);
+}
+
+// SWAP MOBILE
+let startX = 0;
+let endX = 0;
+
+slider.addEventListener('touchstart', function(e) {
+    startX = e.touches[0].clientX;
+    clearInterval(autoSlide);
+})
+
+slider.addEventListener('touchend', function(e) {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+    autoSlide = setInterval(nextSlide, 3000);
+})
+
+function handleSwipe() {
+    const swipeDistance = startX - endX;
+    if(swipeDistance > 50) {
+        // Swipe Kiri
+        nextSlide();
+    } else if(swipeDistance < -50) {
+        // Swipe Kanan
+        prevSlide();
+    }
+}
+
+
