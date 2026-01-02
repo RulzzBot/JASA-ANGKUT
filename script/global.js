@@ -89,7 +89,7 @@ const testi = [
         nama : "Yusdi Rohman",
         kota : "Demak",
         rating : "⭐⭐⭐⭐⭐",
-        isi : "Pelayanan nya Oke Banget, Cepat dan juga Barang bawaan aman. Saya akan langganan disini.",
+        isi : "Pelayanan nya Oke Banget, Cepat dan juga Barang bawaan aman.",
         desc : "Klien Pindahan Barang"
     },
     {
